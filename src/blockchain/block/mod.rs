@@ -20,7 +20,7 @@ pub struct Block {
 }
 
 pub trait BlockT {
-    fn new(height: i64, merkle_root: String, previous_hash: String) -> Block;
+    fn new(height: i64, merkle_root: String, previous_hash: String) -> Self;
     fn calculate_block_header_hash(&mut self);
     fn to_json(&self) -> Block;
 }
@@ -65,7 +65,7 @@ impl BlockT for Block {
         let block_header_hash = sha256.result_str();
         self.hash = block_header_hash;
     }
-    
+
     fn to_json(&self) -> Block {
         Block {
             block_header: BlockHeader {
