@@ -1,5 +1,5 @@
 [package]
-name = "rust-chain"
+name = "rust_mvb"
 version = "0.1.0"
 authors = ["AtsushiMiyazaki <miyazaki@eversystem.co.jp>"]
 edition = "2018"
@@ -7,6 +7,14 @@ edition = "2018"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-rust-crypto = "0.2.36"
-hex = "0.4.2"
-chrono = "0.4.11"
+crypto-hash = "0.3.4"
+ed25519-dalek = "1.0.0-pre.3"
+rand = "0.7.3"
+
+[lib]
+name = "rustmvblib"
+path = "src/lib.rs"
+
+[[bin]]
+name = "rust_mvb"
+path = "src/main.rs"
